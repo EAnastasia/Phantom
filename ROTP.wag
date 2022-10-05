@@ -5,13 +5,13 @@
    WinAGIVersion = 2.2
    GameID = ROTP
    Interpreter = 2.917
-   LastEdit = "05/10/2022 06:43:40"
+   LastEdit = "05/10/2022 10:17:41"
    Description = "The Return of the Phantom"
    GameVersion = "Phantom version 0.1"
-   About = "The Return of the Phantom was created by Michael Girkin."
+   About = "The Return of the Phantom was created by Eleanor Murphy"
    ResDir = src
    UseResNames = True
-   Author = "Michael Girkin"
+   Author = EAM
    UseLE = True
    PlatformType = 0
    Platform = ""
