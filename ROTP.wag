@@ -1,0 +1,558 @@
+#
+# WinAGI Game Property File
+#
+[General]
+   WinAGIVersion = 2.2
+   GameID = ROTP
+   Interpreter = 2.917
+   LastEdit = "05/10/2022 06:43:40"
+   Description = "The Return of the Phantom"
+   GameVersion = "Phantom version 0.1"
+   About = "The Return of the Phantom was created by Michael Girkin."
+   ResDir = src
+   UseResNames = True
+   Author = "Michael Girkin"
+   UseLE = True
+   PlatformType = 0
+   Platform = ""
+   DOSExec = ""
+   PlatformOpts = ""
+   CodePage = 437
+
+[Palette]
+   Color0 = &H00000000
+   Color1 = &H00A00000
+   Color2 = &H0000A000
+   Color3 = &H00A0A000
+   Color4 = &H000000A0
+   Color5 = &H00A00080
+   Color6 = &H000050A0
+   Color7 = &H00A0A0A0
+   Color8 = &H00505050
+   Color9 = &H00FF5050
+   Color10 = &H0050FF00
+   Color11 = &H00FFFF50
+   Color12 = &H005050FF
+   Color13 = &H00FF50FF
+   Color14 = &H0050FFFF
+   Color15 = &H00FFFFFF
+
+[WORDS.TOK]
+   Description = ""
+
+[OBJECT]
+   Description = ""
+
+[::BEGIN Logics::]
+[Logic0]
+   CompCRC32 = &HCEBCC705
+   CRC32 = &HCEBCC705
+   ID = lgc.Main
+   IsRoom = False
+   Size = 1858
+   Description = "This logic runs in every interpreter cycle and calls other logics as needed."
+
+[Logic2]
+   ID = rm2.auditorium.21
+   Description = "C21 opera auditorium"
+   CRC32 = &HAED9C163
+   CompCRC32 = &HAED9C163
+   IsRoom = True
+   Size = 270
+
+[Logic90]
+   CompCRC32 = &H39C84B3B
+   CRC32 = &H39C84B3B
+   ID = lgc.GameFunctions
+   IsRoom = False
+   Size = 1850
+   Description = "Game-specific functions\n\nYou should use this logic to perform any game specific functions, such as counting down timers, etc and processing player input related to the game (such as examining/using inventory items) and any other things that are required in several rooms that you don't want to duplicate in each room. \n\nThis logic is called from logic 0, on every cycle, unless disableGameFunctions is set.\n\nSierra did not use a separate logic for all this - they just did it all from logic 0. I find it is neater this way, as you can keep your game specific processing separate from other system-related things (although these may require some modification for your game). Also, this makes logic 0 easier to manage."
+
+[Logic91]
+   CompCRC32 = &H3DD831A6
+   CRC32 = &H3DD831A6
+   IsRoom = False
+   ID = lgc.Init
+   Size = 162
+   Description = "Initialization\n\nThis logic should only be called once, when the game first starts. See the 'Keyboard Controller' topic in the Help file for details on key assignments."
+
+[Logic92]
+   ID = lgc.RoomInit
+   Description = "Room Initialization\n\nThis logic is called by room logics when they are executed for the first time when a new.room() command is encountered. It takes care of the common items that are done for all rooms."
+   CRC32 = &H9E6D2C02
+   CompCRC32 = &H9E6D2C02
+   IsRoom = False
+   Size = 66
+
+[Logic93]
+   ID = lgc.GameHelp
+   Description = "Help Screen\n\nThis screen also demonstrates the use of extended characters in text mode."
+   CRC32 = &HA1983CA4
+   CompCRC32 = &HA1983CA4
+   IsRoom = False
+   Size = 1360
+
+[Logic94]
+   ID = lgc.DebugHelp
+   Description = "Debug mode help screen\n\nDisplays a help screen with typical debug mode commands."
+   CRC32 = &HBB0F27AC
+   CompCRC32 = &HBB0F27AC
+   IsRoom = False
+   Size = 1077
+
+[Logic95]
+   ID = lgc.Death
+   Description = "Death handler\n\nThis logic is run when the player dies. The death message displayed depends on the value of certain.death."
+   CRC32 = &HB69155A4
+   CompCRC32 = &HB69155A4
+   IsRoom = False
+   Size = 681
+
+[Logic96]
+   ID = lgc.TraceInfo
+   Description = "Tracer Info\n\nThis logic includes the text of agi commands so the trace window will display the command text instead of just numbers."
+   CRC32 = &HEBBB5B84
+   CompCRC32 = &HEBBB5B84
+   IsRoom = False
+   Size = 2617
+
+[Logic97]
+   CompCRC32 = &H60E564A5
+   CRC32 = &H60E564A5
+   ID = lgc.Joystick
+   IsRoom = False
+   Size = 46
+   Description = "Joystick support\n\nIf you intend to support a joystick, use this logic to handle joystick input."
+
+[Logic98]
+   CompCRC32 = &H9F4A8739
+   CRC32 = &H9F4A8739
+   ID = lgc.Error
+   IsRoom = False
+   Size = 813
+   Description = "Error Handler\n\nWhen AGI traps an error, this logic will display information on the error and then quit AGI."
+
+[Logic99]
+   CompCRC32 = &H3D06FF2
+   CRC32 = &H3D06FF2
+   ID = lgc.Debug
+   IsRoom = False
+   Size = 1137
+   Description = "Debug mode\n\nWhen debugging, use this logic to handle debug commands."
+
+[Logic100]
+   CompCRC32 = &HE0270CF6
+   CRC32 = &HE0270CF6
+   ID = rm.Title
+   IsRoom = True
+   Size = 349
+   Description = "Opening/intro\n\nThis is an example of an intro screen, with scrolling credits and a theme song."
+
+[Logic4]
+   ID = rm4.orch_pit
+   Description = "The orchestra put of the opera house, same in C21 and C19"
+   CRC32 = &H59D7424F
+   CompCRC32 = &H59D7424F
+   IsRoom = True
+   Size = 1815
+
+[Logic3]
+   ID = rm3.GrandEscal
+   Description = ""
+   CRC32 = &HE5B1E8C7
+   CompCRC32 = &HE5B1E8C7
+   IsRoom = True
+   Size = 1207
+
+[Logic28]
+   ID = rm28.avantfoyer
+   Description = ""
+   CRC32 = &H8408C37A
+   CompCRC32 = &H8408C37A
+   IsRoom = True
+   Size = 571
+
+[Logic9]
+   ID = rm9.traproom
+   Description = ""
+   CRC32 = &H81872352
+   CompCRC32 = &H81872352
+   IsRoom = True
+   Size = 5235
+
+[Logic13]
+   ID = rm13.L.stage
+   Description = "The centre of the Opera Stage"
+   CRC32 = &H63045039
+   CompCRC32 = &H63045039
+   IsRoom = True
+   Size = 1934
+
+[Logic59]
+   ID = rm59.R.stage
+   Description = "The right side of the stage"
+   CRC32 = &H66EF34D7
+   CompCRC32 = &H66EF34D7
+   IsRoom = True
+   Size = 2443
+
+[Logic60]
+   ID = rm60.StageRight
+   Description = ""
+   CRC32 = &H7F8164BC
+   CompCRC32 = &H7F8164BC
+   IsRoom = True
+   Size = 1077
+
+[Logic61]
+   ID = rm61.StageLeft
+   Description = ""
+   CRC32 = &HC29C29CC
+   CompCRC32 = &HC29C29CC
+   IsRoom = True
+   Size = 149
+
+[Logic12]
+   ID = rm12.Backstage
+   Description = "The large backstage area (where ego=tiny)"
+   CRC32 = &H249A8762
+   CompCRC32 = &H249A8762
+   IsRoom = True
+   Size = 1592
+[::END Logics::]
+
+[::BEGIN Pictures::]
+[Picture100]
+   ID = Credits
+   Description = "A simple introductory screen picture. Add scrolling credits for a nice effect."
+   BkgdImg = ""
+   Size = 38
+
+[Picture2]
+   ID = auditorium.21
+   Description = "The auditorium of the Paris Opéra House"
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\operahousefronton.jpg"
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|870|579
+   BkgdShow = True
+   Size = 1968
+
+[Picture4]
+   ID = orch_pit
+   Description = ""
+   Size = 4783
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\orch pit.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|635|322
+
+[Picture28]
+   ID = AvantFoyer
+   Description = ""
+   Size = 3353
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Avant-Foyer.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|800|620
+
+[Picture3]
+   ID = Grand.Escalier
+   Description = ""
+   Size = 6218
+   BkgdImg = ""
+
+[Picture9]
+   ID = Traproom
+   Description = ""
+   Size = 2811
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Traproom 2.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 6|0|0|0
+   BkgdSize = 314|168|640|312
+
+[Picture13]
+   ID = Stage.L
+   Description = ""
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Stage left.jpg"
+   BkgdShow = True
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|640|312
+   Size = 3588
+
+[Picture59]
+   ID = Stage.R
+   Description = ""
+   Size = 3588
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Stage right.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|640|311
+
+[Picture60]
+   ID = StageRight
+   Description = "Offstage, Right"
+   Size = 2427
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Backstage right.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 6|4|0|0
+   BkgdSize = 307|159|640|312
+
+[Picture61]
+   ID = StageLeft
+   Description = "Offstage, Left"
+   Size = 3219
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Backstage left.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 3|4|0|0
+   BkgdSize = 313|161|640|312
+
+[Picture12]
+   ID = Backstage.tiny
+   Description = ""
+   Size = 1777
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Metropolitan-Opera-House-Lincoln-Center-Behind-the-Scenes-Backstage-NYC_38.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 0|0|0|0
+   BkgdSize = 320|168|800|533
+[::END Pictures::]
+
+[::BEGIN Sounds::]
+[Sound1]
+   ID = s.DoorOpen
+   Description = "A simple sound effect for an automatic opening door."
+   Key = 0
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 31
+
+[Sound2]
+   ID = s.DoorClose
+   Description = "A simple sound effect for an automatic closing door."
+   Key = 0
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 31
+
+[Sound10]
+   ID = m.StarWars
+   Description = "A theme song that can be played while title screen is shown."
+   Key = 0
+   TPQN10 = 4
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = False
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   TPQN = 0
+   Size = -1
+
+[Sound11]
+   ID = m.BWV801
+   Description = "Sinfinia 15 in B minor BWV801, J.S. Bach"
+   Key = 2
+   TPQN11 = 16
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   TPQN = 0
+   Size = -1
+
+[Sound0]
+   ID = m.Theme
+   Description = "'Toccata' from Boeellmann's "Suite Gothique"   #Suite Gothique"
+   Key = -3
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 2336
+
+[Sound3]
+   ID = s.squeak
+   Description = Wheelsqueak
+   Key = 0
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 31
+
+[Sound4]
+   ID = s.falling
+   Description = ""
+   Key = -3
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 281
+[::END Sounds::]
+
+[::BEGIN Views::]
+[View1]
+   ID = EgoDead
+   Description = "Contains two different versions of Ego after dying. Add others to show additional ways Ego might die"
+   Size = 756
+
+[View218]
+   ID = OpeningCredits
+   Description = "Example of startup credits that fade in and fade out. Used on the introduction page."
+   Size = 3451
+
+[View220]
+   ID = Inv.TestItem
+   Description = "Inventory view of a sample item that includes a border."
+   Size = 286
+
+[View0]
+   ID = Ego
+   Description = ""
+   Size = -1
+
+[View2]
+   ID = EgoWade
+   Description = ""
+   Size = 1739
+
+[View3]
+   ID = EgoEve
+   Description = ""
+   Size = 2697
+
+[View4]
+   ID = Florent
+   Description = ""
+   Size = 2284
+
+[View5]
+   ID = Daae
+   Description = ""
+   Size = 2064
+
+[View7]
+   ID = Richard
+   Description = ""
+   Size = 2303
+
+[View9]
+   ID = Jacques
+   Description = ""
+   Size = 2768
+
+[View6]
+   ID = Brie
+   Description = ""
+   Size = 2787
+
+[View100]
+   ID = Candles
+   Description = ""
+   Size = 212
+
+[View101]
+   ID = Doors1
+   Description = ""
+   Size = 2688
+
+[View102]
+   ID = v.traproom
+   Description = ""
+   Size = 19958
+
+[View10]
+   ID = EgoPush
+   Description = ""
+   Size = 565
+
+[View255]
+   ID = v.Easter
+   Description = "Easter eggs!"
+   Size = 109
+
+[View99]
+   ID = v.stages
+   Description = ""
+   Size = 198
+
+[View98]
+   ID = v.StageLeft
+   Description = ""
+   Size = 2285
+
+[View8]
+   ID = EgoTiny
+   Description = ""
+   Size = 412
+
+[View97]
+   ID = v.Backstage
+   Description = ""
+   Size = 769
+[::END Views::]
