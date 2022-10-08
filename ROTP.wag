@@ -5,13 +5,13 @@
    WinAGIVersion = 2.2
    GameID = ROTP
    Interpreter = 2.917
-   LastEdit = "05/10/2022 06:43:40"
+   LastEdit = "08/10/2022 22:36:47"
    Description = "The Return of the Phantom"
-   GameVersion = "Phantom version 0.1"
-   About = "The Return of the Phantom was created by Michael Girkin."
+   GameVersion = "Phantom version 0.15"
+   About = "Version 0.15 8th Oct 22. The Return of the Phantom was created by Eleanor Murphy."
    ResDir = src
    UseResNames = True
-   Author = "Michael Girkin"
+   Author = EAM
    UseLE = True
    PlatformType = 0
    Platform = ""
@@ -45,8 +45,8 @@
 
 [::BEGIN Logics::]
 [Logic0]
-   CompCRC32 = &HCEBCC705
-   CRC32 = &HCEBCC705
+   CompCRC32 = &H1394A725
+   CRC32 = &H1394A725
    ID = lgc.Main
    IsRoom = False
    Size = 1858
@@ -61,8 +61,8 @@
    Size = 270
 
 [Logic90]
-   CompCRC32 = &H39C84B3B
-   CRC32 = &H39C84B3B
+   CompCRC32 = &HBFBBD4DE
+   CRC32 = &HBFBBD4DE
    ID = lgc.GameFunctions
    IsRoom = False
    Size = 1850
@@ -103,10 +103,10 @@
 [Logic95]
    ID = lgc.Death
    Description = "Death handler\n\nThis logic is run when the player dies. The death message displayed depends on the value of certain.death."
-   CRC32 = &HB69155A4
-   CompCRC32 = &HB69155A4
+   CRC32 = &H6D523989
+   CompCRC32 = &H6D523989
    IsRoom = False
-   Size = 681
+   Size = 1187
 
 [Logic96]
    ID = lgc.TraceInfo
@@ -141,8 +141,8 @@
    Description = "Debug mode\n\nWhen debugging, use this logic to handle debug commands."
 
 [Logic100]
-   CompCRC32 = &HE0270CF6
-   CRC32 = &HE0270CF6
+   CompCRC32 = &H8C7E5487
+   CRC32 = &H8C7E5487
    ID = rm.Title
    IsRoom = True
    Size = 349
@@ -175,50 +175,58 @@
 [Logic9]
    ID = rm9.traproom
    Description = ""
-   CRC32 = &H81872352
-   CompCRC32 = &H81872352
+   CRC32 = &H37AA0658
+   CompCRC32 = &H37AA0658
    IsRoom = True
-   Size = 5235
+   Size = 5418
 
 [Logic13]
    ID = rm13.L.stage
    Description = "The centre of the Opera Stage"
-   CRC32 = &H63045039
-   CompCRC32 = &H63045039
+   CRC32 = &H212C1859
+   CompCRC32 = &H212C1859
    IsRoom = True
-   Size = 1934
+   Size = 1854
 
 [Logic59]
    ID = rm59.R.stage
    Description = "The right side of the stage"
-   CRC32 = &H66EF34D7
-   CompCRC32 = &H66EF34D7
+   CRC32 = &H296E3A18
+   CompCRC32 = &H296E3A18
    IsRoom = True
-   Size = 2443
+   Size = 2396
 
 [Logic60]
    ID = rm60.StageRight
    Description = ""
-   CRC32 = &H7F8164BC
-   CompCRC32 = &H7F8164BC
+   CRC32 = &H6EB4ED47
+   CompCRC32 = &H6EB4ED47
    IsRoom = True
-   Size = 1077
+   Size = 1301
 
 [Logic61]
    ID = rm61.StageLeft
    Description = ""
-   CRC32 = &HC29C29CC
-   CompCRC32 = &HC29C29CC
+   CRC32 = &H7128F414
+   CompCRC32 = &H7128F414
    IsRoom = True
    Size = 149
 
 [Logic12]
    ID = rm12.Backstage
    Description = "The large backstage area (where ego=tiny)"
-   CRC32 = &H249A8762
-   CompCRC32 = &H249A8762
+   CRC32 = &HD032F0E4
+   CompCRC32 = &HD032F0E4
    IsRoom = True
-   Size = 1592
+   Size = 2087
+
+[Logic10]
+   ID = rm10.LowBackstage
+   Description = ""
+   CRC32 = &HA3AFBC65
+   CompCRC32 = &HA3AFBC65
+   IsRoom = True
+   Size = 2697
 [::END Logics::]
 
 [::BEGIN Pictures::]
@@ -282,12 +290,12 @@
    BkgdTrans = 0
    BkgdPosn = 0|0|0|0
    BkgdSize = 320|168|640|312
-   Size = 3588
+   Size = 3622
 
 [Picture59]
    ID = Stage.R
    Description = ""
-   Size = 3588
+   Size = 3619
    BkgdImg = "C:\Games\AGIPhantom\Raw images\Stage right.jpg"
    BkgdShow = False
    BkgdTrans = 0
@@ -297,7 +305,7 @@
 [Picture60]
    ID = StageRight
    Description = "Offstage, Right"
-   Size = 2427
+   Size = 2433
    BkgdImg = "C:\Games\AGIPhantom\Raw images\Backstage right.jpg"
    BkgdShow = False
    BkgdTrans = 0
@@ -323,6 +331,16 @@
    BkgdTrans = 0
    BkgdPosn = 0|0|0|0
    BkgdSize = 320|168|800|533
+
+[Picture10]
+   ID = LowerBackstage
+   Description = ""
+   Size = 3323
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\Lower backstage.jpg"
+   BkgdShow = True
+   BkgdTrans = 0
+   BkgdPosn = 6|7|0|0
+   BkgdSize = 307|154|640|311
 [::END Pictures::]
 
 [::BEGIN Sounds::]
@@ -453,23 +471,54 @@
    Visible2 = True
    Visible3 = True
    Size = 281
+
+[Sound5]
+   ID = s.shortfall
+   Size = 106
+   Key = 0
+   TPQN = 0
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Description = ""
+
+[Sound6]
+   ID = s.thunder
+   Description = ""
+   Key = -3
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 226
 [::END Sounds::]
 
 [::BEGIN Views::]
 [View1]
    ID = EgoDead
    Description = "Contains two different versions of Ego after dying. Add others to show additional ways Ego might die"
-   Size = 756
+   Size = 1314
 
 [View218]
    ID = OpeningCredits
    Description = "Example of startup credits that fade in and fade out. Used on the introduction page."
    Size = 3451
-
-[View220]
-   ID = Inv.TestItem
-   Description = "Inventory view of a sample item that includes a border."
-   Size = 286
 
 [View0]
    ID = Ego
@@ -554,5 +603,25 @@
 [View97]
    ID = v.Backstage
    Description = ""
-   Size = 769
+   Size = 894
+
+[View11]
+   ID = Giry
+   Description = ""
+   Size = 3118
+
+[View96]
+   ID = v.Cellar
+   Description = ""
+   Size = 1670
+
+[View228]
+   ID = inv.lantern
+   Description = "A fairly standard oil lantern."
+   Size = 280
+
+[View227]
+   ID = inv.hook
+   Description = "This is a grappling hook"
+   Size = 247
 [::END Views::]
