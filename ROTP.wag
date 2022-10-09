@@ -5,7 +5,7 @@
    WinAGIVersion = 2.2
    GameID = ROTP
    Interpreter = 2.917
-   LastEdit = "08/10/2022 22:36:47"
+   LastEdit = "09/10/2022 19:25:06"
    Description = "The Return of the Phantom"
    GameVersion = "Phantom version 0.15"
    About = "Version 0.15 8th Oct 22. The Return of the Phantom was created by Eleanor Murphy."
@@ -61,11 +61,11 @@
    Size = 270
 
 [Logic90]
-   CompCRC32 = &HBFBBD4DE
-   CRC32 = &HBFBBD4DE
+   CompCRC32 = &H70274FE8
+   CRC32 = &H70274FE8
    ID = lgc.GameFunctions
    IsRoom = False
-   Size = 1850
+   Size = 2213
    Description = "Game-specific functions\n\nYou should use this logic to perform any game specific functions, such as counting down timers, etc and processing player input related to the game (such as examining/using inventory items) and any other things that are required in several rooms that you don't want to duplicate in each room. \n\nThis logic is called from logic 0, on every cycle, unless disableGameFunctions is set.\n\nSierra did not use a separate logic for all this - they just did it all from logic 0. I find it is neater this way, as you can keep your game specific processing separate from other system-related things (although these may require some modification for your game). Also, this makes logic 0 easier to manage."
 
 [Logic91]
@@ -141,8 +141,8 @@
    Description = "Debug mode\n\nWhen debugging, use this logic to handle debug commands."
 
 [Logic100]
-   CompCRC32 = &H8C7E5487
-   CRC32 = &H8C7E5487
+   CompCRC32 = &H2914C613
+   CRC32 = &H2914C613
    ID = rm.Title
    IsRoom = True
    Size = 349
@@ -159,8 +159,8 @@
 [Logic3]
    ID = rm3.GrandEscal
    Description = ""
-   CRC32 = &HE5B1E8C7
-   CompCRC32 = &HE5B1E8C7
+   CRC32 = &HDEBB7363
+   CompCRC32 = &HDEBB7363
    IsRoom = True
    Size = 1207
 
@@ -175,10 +175,10 @@
 [Logic9]
    ID = rm9.traproom
    Description = ""
-   CRC32 = &H37AA0658
-   CompCRC32 = &H37AA0658
+   CRC32 = &H40AF2B63
+   CompCRC32 = &H40AF2B63
    IsRoom = True
-   Size = 5418
+   Size = 5772
 
 [Logic13]
    ID = rm13.L.stage
@@ -199,34 +199,42 @@
 [Logic60]
    ID = rm60.StageRight
    Description = ""
-   CRC32 = &H6EB4ED47
-   CompCRC32 = &H6EB4ED47
+   CRC32 = &H239E6905
+   CompCRC32 = &H239E6905
    IsRoom = True
    Size = 1301
 
 [Logic61]
    ID = rm61.StageLeft
    Description = ""
-   CRC32 = &H7128F414
-   CompCRC32 = &H7128F414
+   CRC32 = &H14248C7D
+   CompCRC32 = &H14248C7D
    IsRoom = True
    Size = 149
 
 [Logic12]
    ID = rm12.Backstage
    Description = "The large backstage area (where ego=tiny)"
-   CRC32 = &HD032F0E4
-   CompCRC32 = &HD032F0E4
+   CRC32 = &H36C7032E
+   CompCRC32 = &H36C7032E
    IsRoom = True
    Size = 2087
 
 [Logic10]
    ID = rm10.LowBackstage
    Description = ""
-   CRC32 = &HA3AFBC65
-   CompCRC32 = &HA3AFBC65
+   CRC32 = &H26116E18
+   CompCRC32 = &H26116E18
    IsRoom = True
-   Size = 2697
+   Size = 3929
+
+[Logic11]
+   ID = rm11.Cellar
+   Description = "The cellars beneath the Opera House"
+   CRC32 = &H52301807
+   CompCRC32 = &H52301807
+   IsRoom = True
+   Size = 4029
 [::END Logics::]
 
 [::BEGIN Pictures::]
@@ -325,7 +333,7 @@
 [Picture12]
    ID = Backstage.tiny
    Description = ""
-   Size = 1777
+   Size = 1799
    BkgdImg = "C:\Games\AGIPhantom\Raw images\Metropolitan-Opera-House-Lincoln-Center-Behind-the-Scenes-Backstage-NYC_38.jpg"
    BkgdShow = False
    BkgdTrans = 0
@@ -335,12 +343,22 @@
 [Picture10]
    ID = LowerBackstage
    Description = ""
-   Size = 3323
+   Size = 3389
    BkgdImg = "C:\Games\AGIPhantom\Raw images\Lower backstage.jpg"
    BkgdShow = True
    BkgdTrans = 0
    BkgdPosn = 6|7|0|0
    BkgdSize = 307|154|640|311
+
+[Picture11]
+   ID = Cellar
+   Description = "The cellars beneath the Opera House..."
+   Size = 3270
+   BkgdImg = "C:\Games\AGIPhantom\Raw images\cellar.jpg"
+   BkgdShow = False
+   BkgdTrans = 0
+   BkgdPosn = 5|4|0|0
+   BkgdSize = 310|159|640|311
 [::END Pictures::]
 
 [::BEGIN Sounds::]
@@ -507,6 +525,42 @@
    Visible2 = True
    Visible3 = True
    Size = 226
+
+[Sound12]
+   ID = m.flying
+   Description = "Those Magnificent Men - the Opera"
+   Key = 0
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 366
+
+[Sound7]
+   ID = s.point
+   Description = ""
+   Key = 0
+   TPQN = 16
+   Inst0 = 80
+   Inst1 = 80
+   Inst2 = 80
+   Mute0 = False
+   Mute1 = False
+   Mute2 = False
+   Mute3 = False
+   Visible0 = True
+   Visible1 = True
+   Visible2 = True
+   Visible3 = True
+   Size = 61
 [::END Sounds::]
 
 [::BEGIN Views::]
@@ -568,7 +622,7 @@
 [View101]
    ID = Doors1
    Description = ""
-   Size = 2688
+   Size = 4954
 
 [View102]
    ID = v.traproom
@@ -613,15 +667,45 @@
 [View96]
    ID = v.Cellar
    Description = ""
-   Size = 1670
+   Size = 2765
 
 [View228]
    ID = inv.lantern
    Description = "A fairly standard oil lantern."
-   Size = 280
+   Size = 272
 
 [View227]
    ID = inv.hook
    Description = "This is a grappling hook"
-   Size = 247
+   Size = 239
+
+[View103]
+   ID = v.frames
+   Description = "Gel frames found in the world. 0=yellow 1=blue 2=red"
+   Size = 77
+
+[View220]
+   ID = inv.Yellow
+   Description = ""
+   Size = 389
+
+[View223]
+   ID = inv.Red
+   Description = ""
+   Size = 386
+
+[View225]
+   ID = inv.Blue
+   Description = ""
+   Size = 387
+
+[View229]
+   ID = inv.rope
+   Description = ""
+   Size = 561
+
+[View237]
+   ID = inv.grapple
+   Description = ""
+   Size = 569
 [::END Views::]
