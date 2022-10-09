@@ -44,6 +44,7 @@
 #define Is1881                 f19 [ Are we in 2021, or 1881? 0=2021, 1=1881
 #define PromptStairs           f21 [ FALSE/0=under box, TRUE/1=under trap door. Force to TRUE in 1881
 #define TrapDoor               f22 [ FALSE/0=trap shut, TRUE/1=trap open
+#define PromptSeenPhantom      f23 [ Have you seen the Phantom on the Opera stage?
 #define cycleEgoAtRest         f30 [ when set to TRUE, ego will cycle even when position does not change
 #define debugging              f31 [ set this flag to TRUE to enable debug menu and debug mode
 #define disableGameFunctions   f32 [ when set to TRUE
